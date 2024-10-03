@@ -1,8 +1,15 @@
 {
+
     "layout": {
         "type": "default",
         "theme": "light"
     },
+
+    "metadata": {
+        "title": "마이싱글",
+        "description": "My Single Page Application"
+    },
+
     "header": {
         "logo": {
             "src": "/logo.png",
@@ -77,9 +84,6 @@
                 "icon": "MessageSquare"
             }
 
-            
-
-
         ]
     },
     "pages": {
@@ -143,5 +147,10 @@
             "content": "데일리 스크럼 내용",
             "classes": "p-4"
         }
+    },
+
+    "footer": {
+        "content": "© 2021 My Single Page Application",
+        "classes": "fixed bottom-0 left-0 right-0 h-14 w-full z-50 text-sm border-t border-gray-200 bg-white flex justify-center items-center"
     }
 }

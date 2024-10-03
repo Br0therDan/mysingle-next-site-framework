@@ -14,6 +14,11 @@ iconNames.forEach((iconName) => {
   IconsMap[iconName] = Icons[iconName as keyof typeof Icons] as LucideIcon;
 });
 
+const MetadataSchema = z.object({
+  title: z.string().optional(),
+  description: z.string().optional(),
+});
+
 const LogoSchema = z.object({
   src: z.string(),
   alt: z.string(),
@@ -44,7 +49,7 @@ const SidebarItemSchema = z.object({
     label: z.string(),
     href: z.string(),
     classes: z.string().optional(),
-    icon: z.string().optional(), // transform 제거
+    icon: z.string().optional(), 
   });
 
 const SidebarSchema = z.object({
@@ -65,6 +70,7 @@ const LayoutSchema = z.object({
 });
 
 export const SiteConfigSchema = z.object({
+  metadata: MetadataSchema,
   layout: LayoutSchema,
   header: HeaderSchema,
   sidebar: SidebarSchema,
