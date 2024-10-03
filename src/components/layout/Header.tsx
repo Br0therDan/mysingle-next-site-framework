@@ -1,21 +1,19 @@
 // src/components/layout/Header.tsx
 "use client";
 import { useState } from "react";
-
-import { Menu, X } from "lucide-react";
+import { Home, Menu, X } from "lucide-react";
 import SearchBar from "../buttons/SearchBar";
 import Notification from "../buttons/Notification";
 import UserButton from "../buttons/UserButton";
-import { Button } from '../ui/button';
-import { HeaderConfig, SidebarConfig } from '@/types/siteConfig';
-import Image from 'next/image';
-import Link from 'next/link';
+import { Button } from "../ui/button";
+import { SiteConfig } from "@/schemas/siteConfigSchema";
+import Image from "next/image";
+import Link from "next/link";
 
 interface HeaderProps {
-  config: HeaderConfig;
-  sidebarConfig: SidebarConfig;
+  config: SiteConfig["header"];
+  sidebarConfig: SiteConfig["sidebar"];
 }
-
 
 const Header: React.FC<HeaderProps> = ({ config, sidebarConfig }) => {
   const { logo, navigation, classes } = config;
@@ -23,20 +21,18 @@ const Header: React.FC<HeaderProps> = ({ config, sidebarConfig }) => {
   const items = sidebarConfig.items || [];
   const sidebarClasses = sidebarConfig.classes;
 
-
   // TODO: user authentication 로직 추후 연계구현 아래 Mock Data 제거
   const user = {
     profile: {
       full_name: "John Doe",
     },
-    email: "john.doe@example.com"
+    email: "john.doe@example.com",
   };
-  
-  return (
 
-    <header className={`${classes || 'bg-white fixed top-0 left-0 right-0 h-14 w-full z-50'}`}>
+  return (
+    <header className={`${classes}`}>
       <div className="flex items-center py-2">
-        <div className="flex-shrink-0 flex items-center px-3">
+        <div className="flex-shrink-0 flex items-center px-3 w-auto ">
           {/* Mobile menu button */}
           <Button
             variant="ghost"
@@ -52,20 +48,28 @@ const Header: React.FC<HeaderProps> = ({ config, sidebarConfig }) => {
             )}
           </Button>
           <div className="logo">
-            <Image src={logo.src} alt={logo.alt} className={logo.classes} />
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              width={40}
+              height={40}
+              className={logo.classes}
+            />
           </div>
         </div>
-        <nav className="navigation">
-        <ul className="flex space-x-4">
-          {navigation.map((item) => (
-            <li key={item.href}>
-              <Link href={item.href}>
-                <a className={item.classes}>{item.label}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+        <div className='hidden ml-16 sm:flex sm:justify-center'>
+          <nav className="navigation">
+            <ul className="flex space-x-6">
+              {navigation.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className={item.classes}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
         <SearchBar />
         <div className="hidden gap-1 pr-4 lg:ml-4 sm:flex sm:items-center">
           <Notification />
@@ -77,17 +81,23 @@ const Header: React.FC<HeaderProps> = ({ config, sidebarConfig }) => {
       {isMobileMenuOpen && (
         <div className="md:hidden">
           <div className="pt-2 pb-3 space-y-1">
-          <ul className="space-y-2">
-        {items.map((item) => (
-          <li key={item.href}>
-            <Link href={item.href}>
-              <a className={`${sidebarClasses || 'block px-4 py-2 rounded hover:bg-gray-100'}`}>
-                {item.label}
-              </a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+            <ul className="space-y-2">
+              {items.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href}>
+                    <a
+                      className={`${
+                        sidebarClasses ||
+                        "block px-4 py-2 rounded hover:bg-gray-100"
+                      }`}
+                    >
+                      {item.label}
+                    </a>
+                  </Link>
+                  <Home className="h-5 w-5" />
+                </li>
+              ))}
+            </ul>
           </div>
           {user?.profile && (
             <div className="pt-4 pb-3 border-t border-gray-200">
@@ -118,5 +128,5 @@ const Header: React.FC<HeaderProps> = ({ config, sidebarConfig }) => {
       )}
     </header>
   );
-}
+};
 export default Header;

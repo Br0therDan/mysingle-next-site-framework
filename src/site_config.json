@@ -9,38 +9,38 @@
       "logo": {
         "src": "/logo.png",
         "alt": "사이트 로고",
-        "classes": "h-8 w-auto"
+        "classes": "flex justify-center items-center"
       },
       "navigation": [
-        { "label": "홈", "href": "/", "classes": "text-gray-700 hover:text-gray-900" },
-        { "label": "소개", "href": "/about", "classes": "text-gray-700 hover:text-gray-900" },
-        { "label": "연락처", "href": "/contact", "classes": "text-gray-700 hover:text-gray-900" }
+        { "label": "홈", "href": "/", "classes": " hover:text-blue-700" },
+        { "label": "소개", "href": "/about", "classes": " hover:text-blue-700" },
+        { "label": "연락처", "href": "/contact", "classes": " hover:text-blue-700" }
       ],
-      "classes": "'bg-white fixed top-0 left-0 right-0 h-14 w-full z-50' shadow"
+      "classes": "fixed top-0 left-0 right-0 h-14 w-full z-50 text-sm border-b border-gray-200 bg-white"
     },
     "sidebar": {
       "visible": true,
       "items": [
         { "label": "대시보드", "href": "/dashboard", "icon": "Home" },
         { "label": "사용자 관리", "href": "/users", "icon": "User" },
-        { "label": "설정", "href": "/settings",  "icon": "Settings" }
+        { "label": "설정", "href": "/settings", "icon": "Settings" }
       ]
     },
     "pages": {
       "home": {
         "title": "홈 페이지",
         "content": "환영합니다!",
-        "classes": "p-8"
+        "classes": "p-4"
       },
       "about": {
         "title": "소개 페이지",
         "content": "이 사이트는 ... 입니다.",
-        "classes": "p-8"
+        "classes": "p-4"
       },
       "contact": {
         "title": "연락처 페이지",
         "content": "문의 사항은 ... ",
-        "classes": "p-8"
+        "classes": "p-4"
       }
     }
   }

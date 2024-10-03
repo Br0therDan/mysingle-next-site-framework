@@ -1,21 +1,24 @@
 // src/app/page.tsx
 import React from 'react';
-
-import { loadSiteConfig } from '../utils/loadSiteConfig';
-import { SiteConfig } from '../types/siteConfig';
-import { GetStaticProps } from 'next';
 import RootLayout from '../components/layout/RootLayout';
+import { loadSiteConfig } from '../utils/loadSiteConfig';
+import { SiteConfig } from '@/schemas/siteConfigSchema';
 
-interface HomeProps {
-  config: SiteConfig;
-  pageData: {
-    title: string;
-    content: string;
-    classes?: string;
-  };
-}
+const Home = async () => {
+  const config: SiteConfig = await loadSiteConfig();
+  const pageData = config.pages['home'];
 
-const Home: React.FC<HomeProps> = ({ config, pageData }) => {
+  if (!pageData) {
+    // Handle the case where pageData is undefined
+    return (
+      <RootLayout config={config}>
+        <div>
+          <h1>Page Not Found</h1>
+        </div>
+      </RootLayout>
+    );
+  }
+
   return (
     <RootLayout config={config}>
       <div className={`${pageData.classes || ''}`}>
@@ -27,24 +30,12 @@ const Home: React.FC<HomeProps> = ({ config, pageData }) => {
 };
 
 export const generateMetadata = async () => {
-  const config = loadSiteConfig();
-  const pageData = (await config).pages['home'];
+  const config = await loadSiteConfig();
+  const pageData = config.pages['home'];
 
   return {
     title: pageData.title,
     description: pageData.content,
-  };
-};
-
-export const generateStaticProps: GetStaticProps = async () => {
-  const config = loadSiteConfig();
-  const pageData = (await config).pages['home'];
-
-  return {
-    props: {
-      config,
-      pageData,
-    },
   };
 };
 
