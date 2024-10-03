@@ -1,16 +1,24 @@
 {
   "name": "@mysingle/next-site-framework",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "private": false,
-  "source": "src/index.ts",
+
+
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist/",
     "README.md",
-    "LICENSE",
-    "src/"
+    "LICENSE"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "next dev",
@@ -24,7 +32,6 @@
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@mysingle/api-client": "^0.2.0",
-    "@mysingle/next-site-framework": "^0.2.3",
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-icons": "^1.3.0",

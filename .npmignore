@@ -38,10 +38,11 @@ npm-debug.log*
 yarn.lock
 package-lock.json
 *.log
-*.json
+*.log
 *.tsbuildinfo
 *.npmignore
 .gitignore
+*.mjs
 
 # IDE 및 에디터 설정 파일 제외
 .vscode/
