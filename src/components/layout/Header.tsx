@@ -6,7 +6,7 @@ import SearchBar from "../buttons/SearchBar";
 import Notification from "../buttons/Notification";
 import UserButton from "../buttons/UserButton";
 import { Button } from "../ui/button";
-import { SiteConfig } from "@/schemas/siteConfigSchema";
+import { SiteConfig } from "../../schemas/siteConfigSchema";
 import Image from "next/image";
 import Link from "next/link";
 

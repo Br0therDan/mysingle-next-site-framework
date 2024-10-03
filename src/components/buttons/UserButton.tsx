@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { CiLogout, CiUser } from "react-icons/ci";
-// import { useAuth } from '@/contexts/AuthContext';
 import Link from 'next/link';
 
 export default function UserButton() {

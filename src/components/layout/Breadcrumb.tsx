@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronRight } from "lucide-react";
-import { BreadcrumbItem } from '@/types/ui';
+import { BreadcrumbItem } from '../../types/ui';
 
 export default function Breadcrumb() {
   const pathname = usePathname();
