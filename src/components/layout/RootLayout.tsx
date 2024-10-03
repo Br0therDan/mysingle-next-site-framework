@@ -1,7 +1,7 @@
 // src/components/RootLayout.tsx
 
 import React from "react";
-import { SiteConfig } from "@/schemas/siteConfigSchema";
+import { SiteConfig } from "../../schemas/siteConfigSchema";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Breadcrumb from "./Breadcrumb";

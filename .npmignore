@@ -1,8 +1,7 @@
 # .npmignore
 
 # 소스 코드 폴더 제외 (패키지에는 빌드된 파일만 포함)
-src/
-public/
+
 
 # TypeScript 설정 파일 제외
 tsconfig.json
@@ -43,6 +42,7 @@ package-lock.json
 *.tsbuildinfo
 *.npmignore
 .gitignore
+*.mjs
 
 # IDE 및 에디터 설정 파일 제외
 .vscode/

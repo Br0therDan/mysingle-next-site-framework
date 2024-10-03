@@ -2,7 +2,7 @@
 import React from 'react';
 import RootLayout from '../components/layout/RootLayout';
 import { loadSiteConfig } from '../utils/loadSiteConfig';
-import { SiteConfig } from '@/schemas/siteConfigSchema';
+import { SiteConfig } from '../schemas/siteConfigSchema';
 
 const Home = async () => {
   const config: SiteConfig = await loadSiteConfig();
