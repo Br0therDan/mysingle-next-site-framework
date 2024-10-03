@@ -1,5 +1,3 @@
-// src/components/layout/Sidebar.tsx
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -15,7 +13,7 @@ import {
 } from "@/components/ui/tooltip";
 import { FiChevronsLeft, FiChevronsRight } from "react-icons/fi";
 
-import * as Icons from "lucide-react";
+import { icons } from "lucide-react";
 import { SiteConfig } from "@/schemas/siteConfigSchema";
 
 interface SidebarProps {
@@ -49,7 +47,7 @@ const Sidebar: React.FC<SidebarProps> = ({ config }) => {
         <ul className="space-y-3 py-4">
           {config.items.map((item) => {
             const IconComponent =
-              item.icon && Icons[item.icon as keyof typeof Icons];
+              item.icon && icons[item.icon as keyof typeof icons];
 
             return (
               <li key={item.href} className="flex justify-start w-full">
@@ -74,11 +72,12 @@ const Sidebar: React.FC<SidebarProps> = ({ config }) => {
                           />
                         )}
 
-                        {/* {expanded && <span className='w-auto'>{item.label}</span>} */}
                         <span
                           className={cn(
                             "w-40 transition-all duration-300 ease-in-out",
-                             expanded ? "flex opacity-100 max-w-full visibility-visible" : "hidden opacity-0 max-w-0 visibility-hidden"
+                            expanded
+                              ? "flex opacity-100 max-w-full visibility-visible"
+                              : "hidden opacity-0 max-w-0 visibility-hidden"
                           )}
                         >
                           {item.label}

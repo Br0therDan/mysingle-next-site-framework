@@ -1,11 +1,11 @@
 // src/utils/loadSiteConfig.ts
 
-import { SiteConfigSchema, SiteConfig } from '@/schemas/siteConfigSchema';
+import { SiteConfigSchema, SiteConfig } from '../schemas/siteConfigSchema';
 import fs from 'fs';
 import path from 'path';
 
 export const loadSiteConfig = (): SiteConfig => {
-  const configPath = path.join(process.cwd(), 'src', 'site_config.json');
+  const configPath = path.join(process.cwd(), '', 'site_config.json');
   if (!fs.existsSync(configPath)) {
     throw new Error('site_config.json 파일이 존재하지 않습니다.');
   }

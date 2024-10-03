@@ -10,8 +10,11 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
     "incremental": true,
+    "target": "ES6",
+    "declaration": true,
+    "outDir": "dist",
+    "jsx": "react-jsx",
     "plugins": [
       {
         "name": "next"
@@ -21,6 +24,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "node_modules/@radix-ui"],
-  "exclude": []
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", ".next"]
 }
