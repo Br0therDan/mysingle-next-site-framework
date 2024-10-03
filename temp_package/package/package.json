@@ -1,6 +1,6 @@
 {
   "name": "@mysingle/next-site-framework",
-  "version": "0.2.4",
+  "version": "0.2.3",
   "private": false,
   "source": "src/index.ts",
   "main": "dist/index.js",

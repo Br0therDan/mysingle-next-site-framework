@@ -42,7 +42,6 @@ package-lock.json
 *.tsbuildinfo
 *.npmignore
 .gitignore
-*.mjs
 
 # IDE 및 에디터 설정 파일 제외
 .vscode/
