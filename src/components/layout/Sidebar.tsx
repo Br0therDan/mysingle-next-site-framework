@@ -15,11 +15,11 @@ import {
 } from "@/components/ui/tooltip";
 import { FiChevronsLeft, FiChevronsRight } from "react-icons/fi";
 
-import * as Icons from 'lucide-react';
-import { SiteConfig } from '@/schemas/siteConfigSchema';
+import * as Icons from "lucide-react";
+import { SiteConfig } from "@/schemas/siteConfigSchema";
 
 interface SidebarProps {
-  config: SiteConfig['sidebar'];
+  config: SiteConfig["sidebar"];
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ config }) => {
@@ -48,7 +48,8 @@ const Sidebar: React.FC<SidebarProps> = ({ config }) => {
       <nav className="flex-1 overflow-hidden p-[5px]">
         <ul className="space-y-3 py-4">
           {config.items.map((item) => {
-            const IconComponent = item.icon && Icons[item.icon as keyof typeof Icons];
+            const IconComponent =
+              item.icon && Icons[item.icon as keyof typeof Icons];
 
             return (
               <li key={item.href} className="flex justify-start w-full">
@@ -72,7 +73,16 @@ const Sidebar: React.FC<SidebarProps> = ({ config }) => {
                             )}
                           />
                         )}
-                        {expanded && <span className='w-auto'>{item.label}</span>}
+
+                        {/* {expanded && <span className='w-auto'>{item.label}</span>} */}
+                        <span
+                          className={cn(
+                            "w-40 transition-all duration-300 ease-in-out",
+                             expanded ? "flex opacity-100 max-w-full visibility-visible" : "hidden opacity-0 max-w-0 visibility-hidden"
+                          )}
+                        >
+                          {item.label}
+                        </span>
                       </Link>
                     </TooltipTrigger>
                     {!expanded && (

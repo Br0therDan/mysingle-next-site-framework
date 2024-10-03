@@ -1,46 +1,147 @@
-
-
 {
     "layout": {
-      "type": "default",
-      "theme": "light"
+        "type": "default",
+        "theme": "light"
     },
     "header": {
-      "logo": {
-        "src": "/logo.png",
-        "alt": "사이트 로고",
-        "classes": "flex justify-center items-center"
-      },
-      "navigation": [
-        { "label": "홈", "href": "/", "classes": " hover:text-blue-700" },
-        { "label": "소개", "href": "/about", "classes": " hover:text-blue-700" },
-        { "label": "연락처", "href": "/contact", "classes": " hover:text-blue-700" }
-      ],
-      "classes": "fixed top-0 left-0 right-0 h-14 w-full z-50 text-sm border-b border-gray-200 bg-white"
+        "logo": {
+            "src": "/logo.png",
+            "alt": "사이트 로고",
+            "classes": "flex justify-center items-center"
+        },
+        "navigation": [
+            {
+                "label": "홈",
+                "href": "/",
+                "classes": " hover:text-blue-700"
+            },
+            {
+                "label": "소개",
+                "href": "/about",
+                "classes": " hover:text-blue-700"
+            },
+            {
+                "label": "연락처",
+                "href": "/contact",
+                "classes": " hover:text-blue-700"
+            }
+        ],
+        "classes": "fixed top-0 left-0 right-0 h-14 w-full z-50 text-sm border-b border-gray-200 bg-white"
     },
     "sidebar": {
-      "visible": true,
-      "items": [
-        { "label": "대시보드", "href": "/dashboard", "icon": "Home" },
-        { "label": "사용자 관리", "href": "/users", "icon": "User" },
-        { "label": "설정", "href": "/settings", "icon": "Settings" }
-      ]
+        "visible": true,
+        "items": [
+            {
+                "label": "대시보드",
+                "href": "/dashboard",
+                "icon": "Home"
+            },
+            {
+                "label": "계정",
+                "href": "/accounts",
+                "icon": "Building2Icon"
+            },
+            {
+                "label": "연락처",
+                "href": "/contacts",
+                "icon": "BookUserIcon"
+            },
+            {
+                "label": "영업기회",
+                "href": "/opportunities",
+                "icon": "DollarSign"
+            },
+            {
+                "label": "리드",
+                "href": "/leads",
+                "icon": "ArchiveIcon"
+            },
+            {
+                "label": "견적",
+                "href": "/quotes",
+                "icon": "ScrollTextIcon"
+            },
+            {
+                "label": "프로젝트",
+                "href": "/projects",
+                "icon": "SquareChartGanttIcon"
+            },
+            {
+                "label": "리드",
+                "href": "/tasks",
+                "icon": "CheckSquare"
+            },
+            {
+                "label": "데일리 스크럼",
+                "href": "/daily-scrums",
+                "icon": "MessageSquare"
+            }
+
+            
+
+
+        ]
     },
     "pages": {
-      "home": {
-        "title": "홈 페이지",
-        "content": "환영합니다!",
-        "classes": "p-4"
-      },
-      "about": {
-        "title": "소개 페이지",
-        "content": "이 사이트는 ... 입니다.",
-        "classes": "p-4"
-      },
-      "contact": {
-        "title": "연락처 페이지",
-        "content": "문의 사항은 ... ",
-        "classes": "p-4"
-      }
+        "home": {
+            "title": "홈 페이지",
+            "content": "환영합니다!",
+            "classes": "p-4"
+        },
+        "about": {
+            "title": "소개 페이지",
+            "content": "이 사이트는 ... 입니다.",
+            "classes": "p-4"
+        },
+        "contact": {
+            "title": "연락처 페이지",
+            "content": "문의 사항은 ... ",
+            "classes": "p-4"
+        },
+        "dashboard": {
+            "title": "대시보드",
+            "content": "대시보드 내용",
+            "classes": "p-4"
+        },
+        "accounts": {
+            "title": "계정",
+            "content": "계정 내용",
+            "classes": "p-4"
+        },
+        "contacts": {
+            "title": "연락처",
+            "content": "연락처 내용",
+            "classes": "p-4"
+        },
+        "opportunities": {
+            "title": "영업기회",
+            "content": "영업기회 내용",
+            "classes": "p-4"
+        },
+        "leads": {
+            "title": "리드",
+            "content": "리드 내용",
+            "classes": "p-4"
+        },
+        "quotes": {
+            "title": "견적",
+            "content": "견적 내용",
+            "classes": "p-4"
+        },
+        "projects": {
+            "title": "프로젝트",
+            "content": "프로젝트 내용",
+            "classes": "p-4"
+        },
+        "tasks": {
+            "title": "리드",
+            "content": "리드 내용",
+            "classes": "p-4"
+        },
+        "daily-scrums": {
+            "title": "데일리 스크럼",
+            "content": "데일리 스크럼 내용",
+            "classes": "p-4"
+        }
     }
-  }
+}
