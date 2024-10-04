@@ -1,10 +1,7 @@
 # .npmignore
 
-# 소스 코드 폴더 제외 (패키지에는 빌드된 파일만 포함)
-
-
 # TypeScript 설정 파일 제외
-tsconfig.json
+
 tsconfig.tsbuildinfo
 tsup.config.ts
 
@@ -25,6 +22,7 @@ coverage/
 
 # 노드 모듈 폴더 제외
 node_modules/
+dist/
 
 
 # Git 관련 파일 제외
@@ -38,11 +36,9 @@ npm-debug.log*
 yarn.lock
 package-lock.json
 *.log
-*.log
 *.tsbuildinfo
 *.npmignore
 .gitignore
-*.mjs
 
 # IDE 및 에디터 설정 파일 제외
 .vscode/

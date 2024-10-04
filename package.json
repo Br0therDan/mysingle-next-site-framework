@@ -1,19 +1,23 @@
 {
   "name": "@mysingle/next-site-framework",
-  "version": "0.2.5",
+  "version": "0.2.9",
+  "description": "MySingle Next.js Site Framework",
   "private": false,
-
 
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist/",
+    "dist/app/global.css",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "tailwind.config.ts",
+    "tsconfig.json",
+    "components.json"
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
+      "import": "./dist/index.js",
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
@@ -57,7 +61,7 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },
-  "description": "MySingle Next.js Site Framework",
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Br0therDan/mysingle-next-site-framework.git"
